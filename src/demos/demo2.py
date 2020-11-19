@@ -18,6 +18,30 @@ containsTypo(3) -> False
 containsTypo(5) -> True
 containsTypo(4) -> True
 """
+def containsTypo(n):
+    return True
+
 def firstDraftWithTypo(n):
     # Your code here
-    pass
+    # starting left point to 1
+    left = 1
+    # set a right side to n
+    right = n
+
+    # while the lft side is less than the right side
+    while left < right:
+        # find the mid point with normalization
+        midpoint = left + (right - left) // 2
+
+    # if containsTypo(at the mid point):
+    if containsTypo(midpoint):
+        # set our right to our midpoint
+        right = midpoint
+
+    # otherwise
+    else:
+        # set out left to our midpoint plus one
+        left = midpoint + 1
+    
+    # return left
+    return left
